@@ -5,48 +5,59 @@
     # Request for reservoir dimensions and discretization parameters
 
 # Lx
-pass
+Lx = float(input('What is the lenght of the reservior in the X axis'))
 # Ly
-pass
+Ly = float(input('What is the lenght of the reservior in the Y axis'))
 # Lz
-pass
+Lz = float(input('What is the lenght of the reservior in the Z axis'))
 # nx
-pass
+nx = int(input('What is the number of gridblocks in X axis'))
 # ny
-pass
+ny = int(input('What is the number of gridblocks in Y axis'))
 # nz
-pass
+nz = int(input('What is the number of gridblocks in Z axis'))
 
 
 #################### Task 2 ############################
     # Request for the cut-off value
 # cut_off
-pass
+cut_off = float(input('What is the value of cut_off'))
 
 #################### Task 3 ############################
     # Initialize counters
 
 # n_active
-pass
+n_active = 0
 # n_inactive
-pass
+n_inactive = 0
 
 #################### Task 4 ############################
     # Loop through all blocks (nested loop)
 for k in range(1, nz+1):
     # Initialize layer counter
-    pass
+    n_active layer = 0
     # two nested loops go here
-    pass
-
+    for j in range(1, ny+1):
+        for i in range(1, nx+1):
+            perm = float(input("What is the permeability Value?"))
+            if perm < cut_off:
+                category = 'inactive'
+                n_inactive = n_inactive + 1
+            else:
+                category = 'active'
+                n_active = n_active + 1
+                n_active_layer = n_active+layer + 1
     # Print layer count
-    pass
+    print(n_active_layer)
 
 #################### Task 5 ############################
     # Print overall counts
+all_blocks = n_active + n_inactive
+n_active_percent = (n_active/all_blocks)* 100
+round_n_active_percent = round(n_active_percent,2)
 
 # Print 'active'
-pass
+print(f'The percentage of the active blocks in the entire reservior is {round_n_active_percent}')
 
 # Print 'inactive'
-pass
+print(f'The percentage of the inactive blocks in the entire reservior is {round_n_inactive_percent}')
